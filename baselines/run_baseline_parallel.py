@@ -40,7 +40,7 @@ if __name__ == '__main__':
     
     env_config = change_env(env_config, args)
     
-    num_cpu = 8 #64 #46  # Also sets the number of episodes per training iteration
+    num_cpu = 2 #64 #46  # Also sets the number of episodes per training iteration
     env = SubprocVecEnv([make_env(i, env_config) for i in range(num_cpu)])
     
     checkpoint_callback = CheckpointCallback(save_freq=ep_length, save_path=sess_path,
